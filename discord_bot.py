@@ -59,8 +59,8 @@ async def on_message(message):
         print ("Sending dog picture")
         await message.channel.send(f"https://api.tinyfox.dev{anipic.json()['loc']}")
 
-    elif any (word in message.content.lower().strip() for word in ["deer", "forest puppy", "zoey"]) and not message.author.bot:
-        print ("Detected 'deer,' 'forest puppy' or 'zoey' in message")
+    elif any (word in message.content.lower().strip() for word in ["deer", "forest puppy"]) and not message.author.bot:
+        print ("Detected 'deer' or 'forest puppy' in message")
         anipic = requests.get("https://api.tinyfox.dev/img?animal=bleat&json")
         print ("Sending deer picture")
         await message.channel.send(f"https://api.tinyfox.dev{anipic.json()['loc']}")
